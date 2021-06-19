@@ -17,7 +17,9 @@
    --main-color: #fff;
    --main-text-color: #212121;
    --second-text-color: #757575;
+   --text-color-transparent: rgba(255, 255, 255, 0.6);
    --special-color: #2196f3;
+   --second-special-color: #188CE8;
    --overlay-bg-color: #2196F3;
    --social-icon-color: #AFB1B8;
    --bg-hero-footer: #2f303a;
@@ -275,6 +277,157 @@ a.active {
    transform: translate3d(-50%, -50%, 0);
    fill: currentColor;
  }
+/* текст-призыв в форме заказа */
+.text-modal {
+   margin-bottom: 12px;
+   text-align: center;
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 1.15;
+ }
+ 
+ /* форма заказа */
+ .from-order {
+   font-size: 12px;
+   line-height: 1.167;
+   letter-spacing: 0.01em;
+ }
+ 
+ /* метка поля ввода */
+ .field-label {
+   position: relative;
+   margin-bottom: 10px;
+   display: block;
+ }
+ 
+ /* поле ввода в форме заказа */
+ .order-input {
+   width: 100%;
+   padding: 12px 0 12px 42px;
+   margin-top: 4px;
+   font-size: 16px;
+   transition: border var(--transition-duration) var(--timing-function);
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: var(--border-radius);
+ }
+ 
+ /* курсор над полями ввода */
+ 
+ .order-input:hover,
+ .order-input:focus {
+   cursor: pointer;
+   border: 1px solid var(--special-color);
+ }
+ 
+ /* убираем цвет полей по умолчанию */
+ .order-input:hover,
+ .order-input:focus,
+ .order-input:active,
+ .order-input:-webkit-autofill {
+   box-shadow: 0 0 0 200px var(--main-color) inset;
+ }
+ 
+ /* общий класс для иконок полей ввода формы */
+ .label-icon {
+   position: absolute;
+   bottom: 4px;
+   left: 15px;
+   transform: translateY(-50%);
+   fill: currentColor;
+   transition: fill var(--transition-duration) var(--timing-function);
+ }
+ 
+ /* покраска иконок при фокусе и наведении */
+ .order-input:hover + .label-icon,
+ .order-input:focus + .label-icon {
+   fill: var(--special-color);
+ }
+ 
+ .note-field {
+   margin-bottom: 20px;
+ }
+ 
+ /* примечание в форме заказа */
+ .order-note {
+   padding: 12px 16px;
+   resize: none;
+ }
+ 
+ .order-note::placeholder {
+   color: rgba(117, 117, 117, 0.5);
+ }
+ 
+ /* оформление метки чекбокса */
+ .label-chek {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 14px;
+   line-height: 1.714;
+   letter-spacing: 0.03em;
+ }
+ 
+ /* прячем дефолтный чекбокс */
+ .order-chek {
+   appearance: none;
+ }
+ 
+ /* кастомный чекбокс */
+ .icon-check {
+   margin-right: 8.38px;
+   border-radius: 2px;
+   fill: var(--main-color);
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   background-origin: border-box;
+   transition: background-color var(--transition-duration) var(--timing-function),border var(--transition-duration) var(--timing-function);
+ }
+ 
+ /* фокус и ховер на чекбокс */
+ .order-chek:hover + .icon-check,
+ .order-chek:focus + .icon-check {
+   border-color: var(--special-color);
+ }
+ 
+ /* состояние checked  */
+ .order-chek:checked + .icon-check {
+   background-color: var(--special-color);
+ }
+ 
+ /* ссылка на договор */
+ .link-contract {
+   text-decoration: underline;
+   color: var(--special-color);
+ }
+ 
+ /* кнопка оптавки формы заказа */
+ .button-order-submit {
+   display: block;
+   margin: 30px auto;
+   font-family: inherit;
+   color:var(--main-color);
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 1.875;
+   letter-spacing: 0.06;
+   background:var(--special-color);
+   border-radius: 4px;
+   border: 0;
+   padding:10px 32px;
+   transition-property: color, background-color, box-shadow;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--timing-function);
+
+ }
+ .button-order-submit:hover,
+ .button-order-submit:focus,
+ .button-order-submit:active {
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--second-special-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+ }
+ 
 
 /* Особенности работы */
 
@@ -565,6 +718,82 @@ a.active {
    max-width: 100%;
    fill: var(--main-color);
 }
+/* блок для формы подписки */
+.subscribe-box {
+   display: flex;
+   margin-left: auto;
+ }
+ 
+ .form-subscribe-field {
+   display: flex;
+ }
+ 
+ /* призыв подписаться */
+ .subscribe-label {
+   display: block;
+   margin-bottom: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: var(--main-color);
+ }
+ 
+ .subscribe-label:hover,
+ .email-subscribe:hover {
+   cursor: pointer;
+ }
+ 
+ /* поле для ввода e-mail */
+ .email-subscribe {
+   width: 358px;
+   height: 50px;
+   margin-right: 12px;
+   padding: 15px 16px;
+   font-size: 16px;
+   line-height: 1.25;
+   color: var(--text-color-transparent);
+   background-color: transparent;
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: var(--border-radius);
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+ }
+ 
+ /* кнопка оптавки e-mail */
+ .button-subscribe {
+   padding: 10px 28px 10px 29px;
+   display: block;
+   font-family: inherit;
+   color:var(--main-color);
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 1.875;
+   letter-spacing: 0.06;
+   background:var(--special-color);
+   border-radius: 4px;
+   border: 0;
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+   transition-property: color, background-color, box-shadow;
+   transition-duration: var(--transition-duration);
+   transition-timing-function: var(--timing-function);
+ }
+ .button-subscribe:hover,
+ .button-subscribe:focus
+ .button-subscribe:active {
+   cursor: pointer;
+   color: var(--main-color);
+   background-color: var(--second-special-color);
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+   0px 2px 2px rgba(0, 0, 0, 0.12);
+ }
+ 
+.icon-send {
+    fill: var(--main-color);
+ }
+ label,
+ input,
+ form {
+   margin: 0;
+   padding: 0;
+ }
 /* Портфолио */
 
 .filter-list {
